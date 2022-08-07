@@ -7,10 +7,11 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://okikechukwukere.github.io/https://github.com/Okikechukwukere/EMS-Ecommerce",
   "description": ""
 }
