@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>EMS</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <nav class="nav">
+          <img src="../Images/EMS.svg" alt="" class="logo" id="header-logo" />
+          <ul class="menu-items">
+            <li class="menu-item" id="intro"><a href="#">Info</a></li>
+            <li class="menu-item" id="about"><a href="#">About</a></li>
+            <li class="menu-item" id="shop"><a href="#">Shop</a></li>
+          </ul>
+          <div class="cart">
+            <img src="../Images/cart.svg" alt="" id="cart-icon" />
+            <p class="item-no">0</p>
+          </div>
+        </nav>
+
+        <section class="home">
+          <div class="home-content">
+            <h1 id="home-text">
+              THE <br />
+              E-MILLENIAL <br />
+              STORE
+            </h1>
+            <img src="../Images/heroImage.png" alt="" class="home-img" />
+          </div>
+          <h4 id="shop-now"><a href="#">SHOP NOW</a></h4>
+        </section>
+      </div>
+    </header>
+
+    <section class="info-section">
+      <div class="container">
+        <p id="info-text">
+          E-Millenial Store is an hypothetical online store for gadgets, we
+          believe every 'Millienial' or 'GenZ' should have today. We've got
+          mobile phones, laptops, smartwatches and other gadgets. Explore all
+          our gadgets and choose the ones that suits you.
+        </p>
+      </div>
+    </section>
+
+    <section class="gadgets">
+      <div class="container">
+        <h1 id="heading">OUR GADGETS</h1>
+        <div class="gadget-items">
+          <article class="gadget-item" id="samsung">
+            <div class="product">
+              <img
+                src="../Images/product1.png"
+                alt=""
+                class="gadget-img"
+                id="samsung-img"
+              />
+              <span class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </span>
+            </div>
+            <h2 class="samsung-text">SAMSUNG TV</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+          <article class="gadget-item" id="pixel">
+            <div class="product">
+              <img
+                src="../Images/product2.png"
+                alt=""
+                class="gadget-img"
+                id="pixel-img"
+              />
+              <span class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </span>
+            </div>
+            <h2 class="gadget-text" id="pixel-text">PIXEL 4a</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+          <article class="gadget-item" id="ps">
+            <div class="product">
+              <img
+                src="../Images/product3.png"
+                alt=""
+                class="gadget-img"
+                id="ps-img"
+              />
+              <div class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </div>
+            </div>
+            <h2 class="gadget-text" id="ps-text">PS 5</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+          <article class="gadget-item" id="mac">
+            <div class="product">
+              <img
+                src="../Images/product4.png"
+                alt=""
+                class="gadget-img"
+                id="mac-img"
+              />
+              <span class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </span>
+            </div>
+            <h2 class="gadget-text" id="mac-text">MACBOOK AIR</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+          <article class="gadget-item" id="apple">
+            <div class="product">
+              <img
+                src="../Images/product5.png"
+                alt=""
+                class="gadget-img"
+                id="apple-img"
+              />
+              <span class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </span>
+            </div>
+            <h2 class="gadget-text" id="apple-text">APPLE WATCH</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+          <article class="gadget-item" id="air">
+            <div class="product">
+              <img
+                src="../Images/product6.png"
+                alt=""
+                class="gadget-img"
+                id="air-img"
+              />
+              <span class="overlay">
+                <p class="price">Price</p>
+                <h3 class="amount">#800,000</h3>
+              </span>
+            </div>
+            <h2 class="gadget-text" id="air-text">AIR PODS</h2>
+            <p class="add-to-cart"><a href="#"> ADD TO CART</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot">
+        <img src="../Images/EMS.svg" alt="" class="logo" id="foter-logo" />
+        <p id="footer-text">Designed and created by Frontend Ninja</p>
+      </div>
+    </footer>
+
+    <div class="cart-form">
+      <form action="" class="forms">
+        <div class="upper">
+          <div class="cart-headers">
+            <!-- make this a table -->
+            <h4 class="serial">S/N</h4>
+            <h4 class="serial">Item</h4>
+            <h4 class="serial">Price</h4>
+            <h4 class="serial">Quantity</h4>
+          </div>
+          <div class="cart-input">
+            <!-- <label for="name"></label> -->
+            <input type="text" name="name" placeholder="Your Name" />
+            <!-- <label for="email"></label> -->
+            <input type="email" name="email" placeholder="Your Email" />
+            <!-- <label for="phone"></label> -->
+            <input type="text" name="phone" placeholder="Your Phone Nuber" />
+
+            <div class="pay">
+              <h3 class="pay-in-word">Total Amount to be Paid</h3>
+              <h1 class="pay-in-fig">#0</h1>
+            </div>
+          </div>
+        </div>
+        <div class="cta-btns">
+          <input type="button" value="Continue Shopping" />
+          <input type="button" value="Check Out" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
