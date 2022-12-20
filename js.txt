@@ -1,0 +1,45 @@
+// import { products } from "./data";
+
+let products = [{}, {}, {}];
+
+
+var addToCart = document.querySelectorAll(".adding-to-cart");
+var tableCart = document.querySelector(".table-cart");
+var remove = document.querySelectorAll(".item-btn");
+var item = document.querySelector(".cart-item");
+var items = document.querySelector(".cart-items");
+
+for (let i of remove) {
+  i.addEventListener("click", (e) => {
+    e.preventDefault();
+    var itemContent = e.target.parentElement.parentElement.parentElement;
+    tableCart.removeChild(itemContent);
+    console.log(itemContent);
+  });
+}
+
+for (let i of addToCart) {
+  i.addEventListener("click", (e) => {
+    e.preventDefault();
+    var itemContent = e.target.parentElement.parentElement;
+    var itemName = itemContent.querySelector(".gadget-text").innerText;
+    var itemPrice = itemContent.querySelector(".amount").innerText;
+
+    addItem(itemName, itemPrice);
+  });
+}
+
+function addItem(itemName, itemPrice) {
+  var cart = document.createElement("tbody");
+  cart.className = "cart-item";
+
+  var gadgetName = cart.querySelector(".title");
+
+  cart.innerHTML = `<td class="items" id="item-sn">1</td>
+  <td class="item title" id="item-it">${itemName}</td>
+  <td class="items price-tag" id="item-pr">${itemPrice}</td>
+  <td class="items quantity" id="item-qt">5</td>
+  <td class="items"><button class="item-btn">Remove</button></td>`;
+
+  tableCart.append(cart);
+}
