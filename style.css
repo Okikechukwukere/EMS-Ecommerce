@@ -134,14 +134,14 @@ body{
     display: grid;
     justify-items: center;
     align-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); */
+    grid-template-columns: 1fr;
     grid-gap: 2rem;
     text-align: center;
 }
 
 .gadget-item{
-    width: 80%;
-
+    width: 100%;
 }
 
 
@@ -398,6 +398,10 @@ button{
         font-size: larger;
     }
 
+    .gadget-items{
+        grid-template-columns: repeat(2,1fr);
+    }
+
     .foot{
         padding: 1.5rem 1rem;
         font-size: large;
@@ -486,6 +490,9 @@ button{
     #info-text{
         font-size: x-large;
     }
+    .gadget-items{
+        grid-template-columns: repeat(2,1fr);
+    }
 
     .foot{
         padding: 1.5rem 2.5rem;
@@ -556,6 +563,9 @@ button{
 
     #info-text{
         font-size: xx-large;
+    }
+    .gadget-items{
+        grid-template-columns: repeat(3,1fr);
     }
 
     .foot{
@@ -675,6 +685,10 @@ button{
     #info-text{
         font-size: 3em;
     }
+    .gadget-items{
+        grid-template-columns: repeat(3,1fr);
+    }
+
     .adding-to-cart{
         padding: 2rem;        
     }
