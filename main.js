@@ -2,37 +2,37 @@ let products = [
   {
     tag: "samsungTv",
     name: "SAMSUNG TV",
-    price: 800,
+    price: 2800,
     inCart: 0,
   },
   {
     tag: "pixel",
     name: "PIXEL 4a",
-    price: 250,
+    price: 1250,
     inCart: 0,
   },
   {
     tag: "playStation",
     name: "PS 5",
-    price: 200,
+    price: 1000,
     inCart: 0,
   },
   {
     tag: "macBook",
     name: "MACBOOK AIR",
-    price: 550,
+    price: 1550,
     inCart: 0,
   },
   {
     tag: "appleWatch",
     name: "APPLE WATCH",
-    price: 100,
+    price: 500,
     inCart: 0,
   },
   {
     tag: "airpods",
     name: "AIR PODS",
-    price: 25,
+    price: 225,
     inCart: 0,
   },
 ];
