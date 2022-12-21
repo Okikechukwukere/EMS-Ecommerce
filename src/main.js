@@ -1,73 +1,59 @@
-let addToCart = document.querySelectorAll(".adding-to-cart");
-let item = document.querySelector(".cart-item");
-let cartItemNumber = document.querySelector(".item-no");
-let cart = document.querySelector(".cart");
-let form = document.querySelector(".cart-form");
-let overlay = document.querySelector(".black");
+let addToCart;
+let item;
+let cartItemNumber;
+let cart;
+let form;
+let overlay;
 let gadgetItems = document.querySelector(".gadget-items");
 // let quantity = document.querySelectorAll(".quantity-btn");
 
 //add a class of added to cart, check if it contains a classlist of added to cart. if it does run this function on click, if noyt run the remove from cart function
 
 // console.log(gadgetItems);
-const fetchData = (url) => {
+
+let fetchProducts = (url) => {
   fetch(url)
     .then((res) => {
       return res.json();
     })
     .then((products) => {
-      products.map((product) => {
-        gadgetItems.innerHTML += `<article class="gadget-item">
-        <div class="product">
-          <img
-            src="./Images/${product.tag}.png"
-            alt="${product.tag}"
-            class="gadget-img"
-            id="${product.tag}-img"
-          />
-          <span class="overlay">
-            <p class="overlay-price">Price</p>
-            <h3 class="overlay-amount">$${product.price}</h3>
-          </span>
-        </div>
-        <h2 class="gadget-text" id="${product.tag}-text">AIR PODS</h2>
-        <h3 class="amount">$${product.price}</h3>
-        <p class="add-to-cart">
-          <a href="#" class="adding-to-cart" id="${product.tag}">ADD TO CART</a>
-        </p>
-      </article>`;
-      });
+      getProducts(products);
     });
-  // .catch((err) => {
-  //   console.log(err);
-  // });
 };
-
-fetchData("./data.json");
 
 gadgetItems.innerHTML = "";
 
-for (let i = 0; i < addToCart.length; i++) {
-  addToCart[i].addEventListener("click", (e) => {
-    e.preventDefault();
-    addItem(products[i], addToCart[i]);
-    totalCost(products[i]);
-    form.classList.remove("show");
-    overlay.classList.remove("body-overlay");
+let getProducts = (products) => {
+  products.map((product) => {
+    gadgetItems.innerHTML += `<article class="gadget-item">
+  <div class="product">
+    <img
+      src="./Images/${product.tag}.png"
+      alt="${product.tag}"
+      class="gadget-img"
+      id="${product.tag}-img"
+    />
+    <span class="overlay">
+      <p class="overlay-price">Price</p>
+      <h3 class="overlay-amount">$${product.price}</h3>
+    </span>
+  </div>
+  <h2 class="gadget-text" id="${product.tag}-text">${product.name}</h2>
+  <h3 class="amount">$${product.price}</h3>
+  <p class="add-to-cart">
+    <a href="#" class="adding-to-cart" id="${product.tag}">ADD TO CART</a>
+  </p>
+</article>`;
   });
-}
 
-//added the remembrance feature by checking if the tag/classname exist, if it does look for coresponding button and add "added" class
+  addToCart = document.querySelectorAll(".adding-to-cart");
+  item = document.querySelector(".cart-item");
+  cartItemNumber = document.querySelector(".item-no");
+  cart = document.querySelector(".cart");
+  form = document.querySelector(".cart-form");
+  overlay = document.querySelector(".black");
 
-let onLoadPage = () => {
-  let cartNumber = localStorage.getItem("cartNumbers");
   let cartStatus = JSON.parse(localStorage.getItem("cartItemStatus"));
-  let cartCost = parseInt(localStorage.getItem("totalCost"));
-
-  cartNumber
-    ? ((cartItemNumber.textContent = cartNumber),
-      (document.querySelector(".pay-in-fig").innerHTML = `$${cartCost}`))
-    : (cartItemNumber.textContent = 0);
 
   for (i of addToCart) {
     let elementId = i.id;
@@ -80,6 +66,37 @@ let onLoadPage = () => {
       });
     }
   }
+
+  addProducts(products);
+  cart.addEventListener("click", displayCart);
+};
+
+let addProducts = (products) => {
+  for (let i = 0; i < addToCart.length; i++) {
+    addToCart[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      addItem(products[i], addToCart[i]);
+      totalCost(products[i]);
+      form.classList.remove("show");
+      overlay.classList.remove("body-overlay");
+    });
+  }
+};
+
+//added the remembrance feature by checking if the tag/classname exist, if it does look for coresponding button and add "added" class
+
+let onLoadPage = () => {
+  fetchProducts("./data.json");
+
+  cartNumber = localStorage.getItem("cartNumbers");
+
+  let cartCost = parseInt(localStorage.getItem("totalCost"));
+  cartItemNumber = document.querySelector(".item-no");
+
+  cartNumber
+    ? ((cartItemNumber.textContent = cartNumber),
+      (document.querySelector(".pay-in-fig").innerHTML = `$${cartCost}`))
+    : (cartItemNumber.textContent = 0);
 };
 
 let addItemNo = () => {
@@ -368,7 +385,6 @@ let displayCart = () => {
     // });
   }
 };
-cart.addEventListener("click", displayCart);
 
 document.querySelector(".continue-btn").addEventListener("click", (e) => {
   e.preventDefault();
