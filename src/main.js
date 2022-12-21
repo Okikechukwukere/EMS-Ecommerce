@@ -1,51 +1,51 @@
-let products = [
-  {
-    tag: "samsungTv",
-    name: "SAMSUNG TV",
-    price: 2800,
-    inCart: 0,
-  },
-  {
-    tag: "pixel",
-    name: "PIXEL 4a",
-    price: 1250,
-    inCart: 0,
-  },
-  {
-    tag: "playStation",
-    name: "PS 5",
-    price: 1000,
-    inCart: 0,
-  },
-  {
-    tag: "macBook",
-    name: "MACBOOK AIR",
-    price: 1550,
-    inCart: 0,
-  },
-  {
-    tag: "appleWatch",
-    name: "APPLE WATCH",
-    price: 500,
-    inCart: 0,
-  },
-  {
-    tag: "airpods",
-    name: "AIR PODS",
-    price: 225,
-    inCart: 0,
-  },
-];
-
 let addToCart = document.querySelectorAll(".adding-to-cart");
 let item = document.querySelector(".cart-item");
 let cartItemNumber = document.querySelector(".item-no");
 let cart = document.querySelector(".cart");
 let form = document.querySelector(".cart-form");
 let overlay = document.querySelector(".black");
+let gadgetItems = document.querySelector(".gadget-items");
 // let quantity = document.querySelectorAll(".quantity-btn");
 
 //add a class of added to cart, check if it contains a classlist of added to cart. if it does run this function on click, if noyt run the remove from cart function
+
+// console.log(gadgetItems);
+const fetchData = (url) => {
+  fetch(url)
+    .then((res) => {
+      return res.json();
+    })
+    .then((products) => {
+      products.map((product) => {
+        gadgetItems.innerHTML += `<article class="gadget-item">
+        <div class="product">
+          <img
+            src="./Images/${product.tag}.png"
+            alt="${product.tag}"
+            class="gadget-img"
+            id="${product.tag}-img"
+          />
+          <span class="overlay">
+            <p class="overlay-price">Price</p>
+            <h3 class="overlay-amount">$${product.price}</h3>
+          </span>
+        </div>
+        <h2 class="gadget-text" id="${product.tag}-text">AIR PODS</h2>
+        <h3 class="amount">$${product.price}</h3>
+        <p class="add-to-cart">
+          <a href="#" class="adding-to-cart" id="${product.tag}">ADD TO CART</a>
+        </p>
+      </article>`;
+      });
+    });
+  // .catch((err) => {
+  //   console.log(err);
+  // });
+};
+
+fetchData("./data.json");
+
+gadgetItems.innerHTML = "";
 
 for (let i = 0; i < addToCart.length; i++) {
   addToCart[i].addEventListener("click", (e) => {

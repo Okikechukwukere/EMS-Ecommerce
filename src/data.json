@@ -1,0 +1,38 @@
+  [
+    {
+      "tag": "samsungTv",
+      "name": "SAMSUNG TV",
+      "price": 2800,
+      "inCart": 0
+    },
+    {
+      "tag": "pixel",
+      "name": "PIXEL 4a",
+      "price": 1250,
+      "inCart": 0
+    },
+    {
+      "tag": "playStation",
+      "name": "PS 5",
+      "price": 1000,
+      "inCart": 0
+    },
+    {
+      "tag": "macBook",
+      "name": "MACBOOK AIR",
+      "price": 1550,
+      "inCart": 0
+    },
+    {
+      "tag": "appleWatch",
+      "name": "APPLE WATCH",
+      "price": 500,
+      "inCart": 0
+    },
+    {
+      "tag": "airpods",
+      "name": "AIR PODS",
+      "price": 225,
+      "inCart": 0
+    }
+  ]
